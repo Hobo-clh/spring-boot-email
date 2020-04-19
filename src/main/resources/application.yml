@@ -1,0 +1,30 @@
+spring:
+  # 配置数据源
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring-boot-email?serverTimezone=UTC&useAffectedRows=true
+    username:
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      minimum-idle: 3
+      maximum-pool-size: 10
+      max-lifetime: 30000
+      connection-test-query: SELECT 1
+
+  mail:
+    host: smtp.qq.com
+    username: longhuahobo@foxmail.com
+    password:
+    port: 465
+    properties:
+      mail:
+        # SMTP服务
+        smtp:
+          ssl:
+            enable: true
+          auth: true
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+            port: 465
+  thymeleaf:
+    cache: false
